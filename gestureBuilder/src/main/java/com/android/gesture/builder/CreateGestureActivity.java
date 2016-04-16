@@ -53,6 +53,10 @@ public class CreateGestureActivity extends Activity {
     private static int AlphaFileCount = 0;
     private static int GammaFileCount = 0;
     private static int SigmaFileCount = 0;
+    private static int MShapeFileCount = 0;
+    private static int ReverseCFileCount = 0;
+    private static int TriangleFileCount = 0;
+
 
     private static int CurrentFileCount = 0;
 
@@ -65,6 +69,9 @@ public class CreateGestureActivity extends Activity {
     private static final String AlphaType = "alpha";
     private static final String GammaType = "gamma";
     private static final String SigmaType = "sigma";
+    private static final String MShapeType = "mshape";
+    private static final String ReverseCShapeType = "revcshape";
+    private static final String TriangleType = "triangle";
 
 
     private ArrayList<Point2D> listOfPoints = new ArrayList<Point2D>();
@@ -262,7 +269,18 @@ public class CreateGestureActivity extends Activity {
             SigmaFileCount += 1;
             CurrentFileCount = SigmaFileCount;
             return SigmaType;
-
+        } else if (userInput.contains("mshape")) {
+            MShapeFileCount += 1;
+            CurrentFileCount = MShapeFileCount;
+            return MShapeType;
+        } else if (userInput.contains("revcshape")) {
+            ReverseCFileCount += 1;
+            CurrentFileCount = ReverseCFileCount;
+            return ReverseCShapeType;
+        } else if (userInput.contains("triangle")) {
+            TriangleFileCount += 1;
+            CurrentFileCount = TriangleFileCount;
+            return TriangleType;
         } else {
             return null;
         }
